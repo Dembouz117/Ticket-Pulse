@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Syne";
+  src: url("fonts/Syne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("fonts/Syne-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OverusedGrotesk";
+  src: url("fonts/OverusedGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OverusedGrotesk";
+  src: url("fonts/OverusedGrotesk-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OverusedGrotesk";
+  src: url("fonts/OverusedGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: semibold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OverusedGrotesk";
+  src: url("fonts/OverusedGrotesk-Italic.ttf") format("truetype");
+  font-weight: italic;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OverusedGrotesk";
+  src: url("fonts/OverusedGrotesk-Medium.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+
+* {
+  font-family: "OverusedGrotesk", sans-serif;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.customPhoneInput .PhoneInputInput {
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+}

@@ -1,0 +1,45 @@
+name: Docker Build and Push
+
+on:
+    push:
+        tags:
+            - "v*"
+
+jobs:
+    build-and-push:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                service: [auth, ticketing, payment, queue, frontend]
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v3
+
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Login to DockerHub
+              uses: docker/login-action@v3
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+            - name: Build and push service image
+              uses: docker/build-push-action@v2
+              with:
+                  context: ./${{ matrix.service }}
+                  platforms: linux/amd64
+                  push: true
+                  tags: tigercxx/cs203-${{ matrix.service }}:${{ github.ref_name }}
+                  build-args: |
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_51Kia4HFtg42uLJvvAAj23WtQbTAzT8ZFK9z1uhIsgK848qUvMxCIerOmOC1ldbyRi19lzI7nq6uvGdxmu6Q7bJmV00sMf1m1da' || '' }}
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_AUTH_API_URL=https://sg1.biddlr.com/auth' || '' }}
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_TICKETING_API_URL=https://sg1.biddlr.com/ticketing' || '' }}
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_PAYMENT_API_URL=https://sg1.biddlr.com/payment' || '' }}
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_QUEUE_API_URL=https://sg1.biddlr.com/queue' || '' }}
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_QUEUE_WEBSOCKET_URL=wss://sg1.biddlr.com/queue/queue' || '' }}
+                      ${{ matrix.service == 'frontend' && 'NEXT_PUBLIC_FRONTEND_URL=https://sg1.biddlr.com' || '' }}

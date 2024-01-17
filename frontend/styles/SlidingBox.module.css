@@ -1,0 +1,43 @@
+/* SlidingBox.css */
+
+/* Container for the sliding box */
+.sliding-box-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px; /* Add some margin to create space for other elements */
+  }
+  
+  /* Clickable box */
+  .box {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Visible state for the clickable box */
+  .box.visible {
+    background-color: lightcoral;
+  }
+  
+  /* Sliding box */
+  .sliding-box {
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the container */
+    width: 100%;
+    height: 100px; /* Adjust the height as needed */
+    background-color: lightseagreen;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%); /* Initially, hide the box below the container */
+  }
+  
+  /* Visible state for the sliding box */
+  .box.visible + .sliding-box {
+    transform: translateY(0); /* Slide the box up when visible */
+  }
+  

@@ -1,0 +1,958 @@
+basePath: /api/v1
+definitions:
+  ent.Concert:
+    properties:
+      artist:
+        description: Artist holds the value of the "artist" field.
+        type: string
+      edges:
+        allOf:
+        - $ref: '#/definitions/ent.ConcertEdges'
+        description: |-
+          Edges holds the relations/edges for other nodes in the graph.
+          The values are being populated by the ConcertQuery when eager-loading is set.
+      id:
+        description: ID of the ent.
+        type: string
+      imageUrl:
+        description: ImageUrl holds the value of the "imageUrl" field.
+        type: string
+      title:
+        description: Title holds the value of the "title" field.
+        type: string
+    type: object
+  ent.ConcertEdges:
+    properties:
+      hasConcertSessions:
+        description: HasConcertSessions holds the value of the hasConcertSessions
+          edge.
+        items:
+          $ref: '#/definitions/ent.ConcertSession'
+        type: array
+    type: object
+  ent.ConcertSession:
+    properties:
+      edges:
+        allOf:
+        - $ref: '#/definitions/ent.ConcertSessionEdges'
+        description: |-
+          Edges holds the relations/edges for other nodes in the graph.
+          The values are being populated by the ConcertSessionQuery when eager-loading is set.
+      id:
+        description: ID of the ent.
+        type: string
+      sessionDateTime:
+        description: SessionDateTime holds the value of the "sessionDateTime" field.
+        type: integer
+    type: object
+  ent.ConcertSessionEdges:
+    properties:
+      hasSections:
+        description: HasSections holds the value of the hasSections edge.
+        items:
+          $ref: '#/definitions/ent.Section'
+        type: array
+      ofConcert:
+        description: OfConcert holds the value of the ofConcert edge.
+        items:
+          $ref: '#/definitions/ent.Concert'
+        type: array
+    type: object
+  ent.Section:
+    properties:
+      bought:
+        description: Bought holds the value of the "bought" field.
+        type: integer
+      capacity:
+        description: Capacity holds the value of the "capacity" field.
+        type: integer
+      category:
+        allOf:
+        - $ref: '#/definitions/section.Category'
+        description: Category holds the value of the "category" field.
+      edges:
+        allOf:
+        - $ref: '#/definitions/ent.SectionEdges'
+        description: |-
+          Edges holds the relations/edges for other nodes in the graph.
+          The values are being populated by the SectionQuery when eager-loading is set.
+      id:
+        description: ID of the ent.
+        type: string
+      name:
+        description: Name holds the value of the "name" field.
+        type: string
+      price:
+        description: Price holds the value of the "price" field.
+        type: integer
+      reserved:
+        description: Reserved holds the value of the "reserved" field.
+        type: integer
+    type: object
+  ent.SectionEdges:
+    properties:
+      atConcertSession:
+        allOf:
+        - $ref: '#/definitions/ent.ConcertSession'
+        description: AtConcertSession holds the value of the atConcertSession edge.
+      hasTickets:
+        description: HasTickets holds the value of the hasTickets edge.
+        items:
+          $ref: '#/definitions/ent.Ticket'
+        type: array
+    type: object
+  ent.Ticket:
+    properties:
+      edges:
+        allOf:
+        - $ref: '#/definitions/ent.TicketEdges'
+        description: |-
+          Edges holds the relations/edges for other nodes in the graph.
+          The values are being populated by the TicketQuery when eager-loading is set.
+      id:
+        description: ID of the ent.
+        type: string
+      seatNumber:
+        description: SeatNumber holds the value of the "seatNumber" field.
+        type: integer
+      status:
+        allOf:
+        - $ref: '#/definitions/ticket.Status'
+        description: Status holds the value of the "status" field.
+      userId:
+        description: UserId holds the value of the "userId" field.
+        type: string
+    type: object
+  ent.TicketEdges:
+    properties:
+      withinSection:
+        allOf:
+        - $ref: '#/definitions/ent.Section'
+        description: WithinSection holds the value of the withinSection edge.
+    type: object
+  section.Category:
+    enum:
+    - CAT1
+    - CAT2
+    - CAT3
+    - CAT4
+    - CAT5
+    type: string
+    x-enum-varnames:
+    - CategoryCAT1
+    - CategoryCAT2
+    - CategoryCAT3
+    - CategoryCAT4
+    - CategoryCAT5
+  ticket.Status:
+    enum:
+    - AVAILABLE
+    - BOUGHT
+    - RESERVED
+    type: string
+    x-enum-varnames:
+    - StatusAVAILABLE
+    - StatusBOUGHT
+    - StatusRESERVED
+  ticketing_internal_common_types.Concert:
+    properties:
+      artist:
+        type: string
+      id:
+        type: string
+      imageUrl:
+        type: string
+      title:
+        type: string
+    type: object
+  ticketing_internal_common_types.ConcertListResponse:
+    properties:
+      concerts:
+        items:
+          $ref: '#/definitions/ticketing_internal_common_types.Concert'
+        type: array
+    type: object
+  ticketing_internal_common_types.ConcertResponse:
+    properties:
+      concert:
+        $ref: '#/definitions/ticketing_internal_common_types.Concert'
+    type: object
+  ticketing_internal_common_types.ConcertWithSessionListResponse:
+    properties:
+      concert:
+        type: string
+      sessions:
+        items:
+          $ref: '#/definitions/ticketing_internal_common_types.Session'
+        type: array
+    type: object
+  ticketing_internal_common_types.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  ticketing_internal_common_types.Section:
+    properties:
+      bought:
+        type: integer
+      capacity:
+        type: integer
+      category:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: integer
+      reserved:
+        type: integer
+    type: object
+  ticketing_internal_common_types.SectionResponse:
+    properties:
+      section:
+        $ref: '#/definitions/ticketing_internal_common_types.Section'
+    type: object
+  ticketing_internal_common_types.SectionWithTicketsListResponse:
+    properties:
+      section:
+        type: string
+      tickets:
+        items:
+          $ref: '#/definitions/ticketing_internal_common_types.Ticket'
+        type: array
+    type: object
+  ticketing_internal_common_types.Session:
+    properties:
+      id:
+        type: string
+      sessionDateTime:
+        type: integer
+    type: object
+  ticketing_internal_common_types.SessionListResponse:
+    properties:
+      sessions:
+        items:
+          $ref: '#/definitions/ticketing_internal_common_types.Session'
+        type: array
+    type: object
+  ticketing_internal_common_types.SessionResponse:
+    properties:
+      session:
+        $ref: '#/definitions/ticketing_internal_common_types.Session'
+    type: object
+  ticketing_internal_common_types.SessionWithSectionListResponse:
+    properties:
+      sections:
+        items:
+          $ref: '#/definitions/ticketing_internal_common_types.Section'
+        type: array
+      session:
+        type: string
+    type: object
+  ticketing_internal_common_types.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  ticketing_internal_common_types.Ticket:
+    properties:
+      id:
+        type: string
+      seatNumber:
+        type: integer
+      status:
+        type: string
+      userId:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is the TicketPulse API for ticketing microservice. Concerts, sessions,
+    sections and tickets are all here.
+  title: TicketPulse Ticketing API
+  version: "1.0"
+paths:
+  /admin/concerts:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a list of all concerts.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ConcertListResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get all Concerts
+      tags:
+      - admin
+    post:
+      consumes:
+      - application/json
+      description: Creates a new concert.
+      parameters:
+      - description: Concert Title
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: Artist Name
+        in: body
+        name: artist
+        required: true
+        schema:
+          type: string
+      - description: Image URL
+        in: body
+        name: imageUrl
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ConcertResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Create a Concert
+      tags:
+      - admin
+  /admin/concerts/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Deletes a concert by its ID.
+      parameters:
+      - description: Concert ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Delete a Concert by ID
+      tags:
+      - admin
+    get:
+      consumes:
+      - application/json
+      description: Retrieves details of a concert by its ID.
+      parameters:
+      - description: Concert ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ConcertResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get a Concert by ID
+      tags:
+      - admin
+    put:
+      consumes:
+      - application/json
+      description: Updates a concert by its ID.
+      parameters:
+      - description: Concert ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Concert Title
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: Artist Name
+        in: body
+        name: artist
+        required: true
+        schema:
+          type: string
+      - description: Image URL
+        in: body
+        name: imageUrl
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ConcertResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Update a Concert by ID
+      tags:
+      - admin
+  /admin/concerts/{id}/sessions:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves sessions of a concert by its ID.
+      parameters:
+      - description: Concert ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ConcertWithSessionListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get Sessions of a Concert
+      tags:
+      - admin
+  /admin/concerts/artist/{artistName}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves concerts by artist.
+      parameters:
+      - description: Artist Name
+        in: path
+        name: artistName
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ConcertListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get Concerts by Artist
+      tags:
+      - admin
+  /admin/sections:
+    post:
+      consumes:
+      - application/json
+      description: Create a new section and its associated tickets
+      parameters:
+      - description: Session ID
+        in: body
+        name: sessionId
+        required: true
+        schema:
+          type: string
+      - description: Section Name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      - description: Section Capacity
+        in: body
+        name: capacity
+        required: true
+        schema:
+          type: integer
+      - description: Section Category
+        in: body
+        name: category
+        required: true
+        schema:
+          type: string
+      - description: Ticket Price
+        in: body
+        name: price
+        required: true
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Create a section with tickets
+      tags:
+      - admin
+  /admin/sections/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a specific section by its ID
+      parameters:
+      - description: Section ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+      summary: Delete a section
+      tags:
+      - admin
+    get:
+      consumes:
+      - application/json
+      description: Retrieve details of a specific section by its ID
+      parameters:
+      - description: Section ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SectionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get details of a section
+      tags:
+      - admin
+    put:
+      consumes:
+      - application/json
+      description: Update details of a specific section by its ID
+      parameters:
+      - description: Section ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Section Name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      - description: Section Capacity
+        in: body
+        name: capacity
+        required: true
+        schema:
+          type: integer
+      - description: Reserved Seats
+        in: body
+        name: reserved
+        required: true
+        schema:
+          type: integer
+      - description: Bought Seats
+        in: body
+        name: bought
+        required: true
+        schema:
+          type: integer
+      - description: Section Category
+        in: body
+        name: category
+        required: true
+        schema:
+          type: string
+      - description: Ticket Price
+        in: body
+        name: price
+        required: true
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SectionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+      summary: Update a section
+      tags:
+      - admin
+  /admin/sections/{id}/tickets:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all tickets associated with a specific section by its
+        ID
+      parameters:
+      - description: Section ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SectionWithTicketsListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+      summary: Get tickets by section
+      tags:
+      - admin
+  /admin/sessions:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a list of all concert sessions.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SessionListResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get all Concert Sessions
+      tags:
+      - admin
+    post:
+      consumes:
+      - application/json
+      description: Creates a new concert session with the provided details.
+      parameters:
+      - description: Date and time of the session
+        in: body
+        name: sessionDateTime
+        required: true
+        schema:
+          type: integer
+      - description: ID of the concert
+        in: body
+        name: concertId
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SessionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Create a new Concert Session
+      tags:
+      - admin
+  /admin/sessions/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Deletes a concert session and its children by its ID.
+      parameters:
+      - description: Session ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Delete a Concert Session
+      tags:
+      - admin
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a concert session by its ID.
+      parameters:
+      - description: Session ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SessionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get a Concert Session by ID
+      tags:
+      - admin
+    put:
+      consumes:
+      - application/json
+      description: Updates the date and time of a concert session.
+      parameters:
+      - description: Session ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Date and time of the session
+        in: body
+        name: sessionDateTime
+        required: true
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SessionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Update a Concert Session
+      tags:
+      - admin
+  /admin/sessions/{id}/sections:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves sections associated with a concert session by its ID.
+      parameters:
+      - description: Session ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.SessionWithSectionListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get Sections by Session ID
+      tags:
+      - admin
+  /admin/tickets:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a list of all tickets.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ent.Ticket'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get all Tickets
+      tags:
+      - admin
+  /admin/tickets/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a ticket by its ID.
+      parameters:
+      - description: Ticket ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.Ticket'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Get Ticket by ID
+      tags:
+      - admin
+    put:
+      consumes:
+      - application/json
+      description: Updates a ticket by its ID.
+      parameters:
+      - description: Ticket ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Seat Number
+        in: body
+        name: seatNumber
+        required: true
+        schema:
+          type: integer
+      - description: Status
+        in: body
+        name: status
+        required: true
+        schema:
+          type: string
+      - description: User ID
+        in: body
+        name: userId
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.Ticket'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ticketing_internal_common_types.ErrorResponse'
+      summary: Update Ticket
+      tags:
+      - admin
+swagger: "2.0"

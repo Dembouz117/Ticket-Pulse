@@ -1,0 +1,1301 @@
+{
+	"info": {
+		"_postman_id": "2efe215f-3858-4fdc-84d6-eff10d6f5b98",
+		"name": "Ticketing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29981505"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Concert",
+					"item": [
+						{
+							"name": "Get all concerts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a concert by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ef51030e-dba7-4207-b5f2-20dc8b328c9f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all concerts by artist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts/artist/:artistname",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts",
+										"artist",
+										":artistname"
+									],
+									"variable": [
+										{
+											"key": "artistname",
+											"value": "NewJeans"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all sessions from a concert",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts/:id/session",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts",
+										":id",
+										"session"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ef51030e-dba7-4207-b5f2-20dc8b328c9f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new concert",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Test\",\r\n    \"artist\": \"Test artist\",\r\n    \"imageUrl\": \"https://people.com/thmb/6DM8_L0YQwa2B4Sx3qky2dh2pMY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(713x199:715x201)/Taylor-swift-Mexico-City-0824232-af5045dd8be549bcb4c1c85a007c85de.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update concert",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Eras Tour 2024\",\r\n    \"artist\": \"Taylor Swift\",\r\n    \"imageUrl\": \"https://people.com/thmb/6DM8_L0YQwa2B4Sx3qky2dh2pMY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(713x199:715x201)/Taylor-swift-Mexico-City-0824232-af5045dd8be549bcb4c1c85a007c85de.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "28aab6cb-bfef-4170-b09f-ac74c77b851b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete concert",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/concerts/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"concerts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "28aab6cb-bfef-4170-b09f-ac74c77b851b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Session",
+					"item": [
+						{
+							"name": "Create session",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sessionDatetime\":1693739993,\r\n    \"concertId\": \"0255201d-ffe2-4401-8d22-3d5194f05c00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sessions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sessions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get session by session id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sessions/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sessions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "e2339fd7-3ec6-4351-8c3a-0b9b72b38702"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update session",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sessionDateTime\": 1693739770\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sessions/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sessions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ecf2f59d-badd-4564-bdaf-54763dfc24f3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete session",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sessions/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sessions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "818628b8-0db6-4dda-b5e4-2685c3789f03"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get sections by session",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sessions/:id/sections",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sessions",
+										":id",
+										"sections"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "e2339fd7-3ec6-4351-8c3a-0b9b72b38702"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Section",
+					"item": [
+						{
+							"name": "Create section with tickets",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sessionId\": \"e2339fd7-3ec6-4351-8c3a-0b9b72b38702\", // Session ID as a valid UUID\r\n    \"name\": \"CAT5\",\r\n    \"capacity\": 10,\r\n    \"reserved\": 0,\r\n    \"bought\": 0,\r\n    \"category\": \"CAT5\" // Use one of the allowed category values: CAT1, CAT2, CAT3, CAT4, CAT5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sections",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get section by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sections/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8c85cc74-c1d3-43dc-a835-0cd7cfac9a09"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update section",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Section A\",\r\n    \"capacity\": 110,\r\n    \"reserved\": 20,\r\n    \"bought\": 0,\r\n    \"category\": \"CAT1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sections/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8c85cc74-c1d3-43dc-a835-0cd7cfac9a09"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete section",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sections/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8c85cc74-c1d3-43dc-a835-0cd7cfac9a09"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get tickets in a section",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/sections/:id/tickets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"sections",
+										":id",
+										"tickets"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8c85cc74-c1d3-43dc-a835-0cd7cfac9a09"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Get ticket by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/tickets/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4fde23f2-adeb-49a8-ba6d-9c8c759b38c6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all tickets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/tickets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tickets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update ticket",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"AVAILABLE\",\r\n    \"userId\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/admin/tickets/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "de1bef70-f5b5-4186-896a-2f25ea9d365a"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Health endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/ticketing/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"ticketing",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Concert",
+					"item": [
+						{
+							"name": "Get all concerts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/concerts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"concerts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a concert by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/concerts/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"concerts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5941dee7-da7b-423b-a635-dcd7629feeee"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all concerts by artist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/concerts/artist/:artistname",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"concerts",
+										"artist",
+										":artistname"
+									],
+									"variable": [
+										{
+											"key": "artistname",
+											"value": "NewJeans"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all sessions from a concert",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/concerts/:id/sessions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"concerts",
+										":id",
+										"sessions"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "05cf3c57-8706-46ad-89b2-da3ec563cc44"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get featured concerts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/concerts/featured",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"concerts",
+										"featured"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Session",
+					"item": [
+						{
+							"name": "Get sections by session",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/sessions/:id/sections",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"sessions",
+										":id",
+										"sections"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "f53be6a6-c32f-4e18-8885-bb71d38c4948"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check and reserve available",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"seats\": [\r\n        {\r\n            \"sectionId\": \"093d3d7a-b0d2-4266-838c-86c32ae32e41\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/sessions/available",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"sessions",
+										"available"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Section",
+					"item": [
+						{
+							"name": "Get available seats",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/sections/:id/available",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"sections",
+										":id",
+										"available"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "177c5649-9081-4b8d-8a9e-861ca6a2f2c7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get section by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/sections/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"sections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "177c5649-9081-4b8d-8a9e-861ca6a2f2c7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get tickets in a section",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/sections/:id/tickets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"sections",
+										":id",
+										"tickets"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "177c5649-9081-4b8d-8a9e-861ca6a2f2c7"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Get ticket by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/tickets/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9f080483-f5f3-48e5-a2cf-45245550e113"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get tickets by user in cookie",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/ticketing/api/v1/tickets/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"ticketing",
+										"api",
+										"v1",
+										"tickets",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "localhost:8080/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"changxianxiang@gmail.com\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"changxianxiang@gmail.com\",\n    \"otpCode\": \"184273\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/otp",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Chang Xian Xiang\",\n    \"email\": \"changxianxiang@gmail.com\",\n    \"password\": \"{{password}}\",\n    \"phone\": \"97822204\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNoYW5neGlhbnhpYW5nQGdtYWlsLmNvbSIsImV4cCI6MTY5MzAyNjIxNX0.bRODA70rQjXW1aeo41YJUy0rpwaNCglpBgZYkZipvzU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/auth/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "_qfdRgFFCSdCy_WfHiOwpzQJC2M=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/checkLogin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/auth/checkLogin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"checkLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health Checkpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/auth/health",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CSRF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/auth/csrf",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"csrf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Queue",
+			"item": [
+				{
+					"name": "localhost:8500/randomise",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8500/randomise",
+							"host": [
+								"localhost"
+							],
+							"port": "8500",
+							"path": [
+								"randomise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8500/reset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8500/reset",
+							"host": [
+								"localhost"
+							],
+							"port": "8500",
+							"path": [
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

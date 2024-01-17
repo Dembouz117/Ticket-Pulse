@@ -1,0 +1,23 @@
+dist/
+node_modules/
+.DS_Store
+.env.*
+.env
+# Go backend specific
+/ticketing/bin/
+/ticketing/pkg/
+
+# Frontend specific
+/frontend/.next/
+/frontend/out/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+k8s/secrets.yaml
+
+!*.sample

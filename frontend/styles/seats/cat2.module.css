@@ -1,0 +1,56 @@
+g:hover .genericShape {
+    fill: var(--color-CAT2);
+}
+g:hover .genericLetter {
+    fill: var(--color-CAT2);
+}
+g:hover .genericCircle {
+    fill:white
+}
+
+g .genericShape {
+    fill: none;
+}
+g .genericLetter {
+    fill: white;
+}
+
+g .genericCircle {
+    fill: var(--color-CAT2);
+}
+
+
+
+#sectionA:hover, #sectionAEnd, #sectionB, #sectionC, #sectionD, #sectionE, #sectionF, #sectionG, #sectionGEnd{
+    fill: var(--color-CAT2);
+}
+
+.boxedSection:hover{
+    fill: var(--color-CAT2);
+}
+
+.boxedSectionHover{
+    fill: var(--color-CAT2);
+}
+
+
+.circle{
+    fill: var(--color-CAT2);
+}
+
+.circleHovered{
+    fill: white;
+}
+
+.circleAHovered, .circleAEndHovered, .circleBHovered, .circleCHovered, .circleDHovered, .circleEHovered, .circleFHovered, .circleGHovered, .circleGEndHovered{
+    fill: white
+}
+
+.letter{
+    fill: white;
+}
+
+.letterHovered{
+
+    fill:var(--color-CAT2);
+}

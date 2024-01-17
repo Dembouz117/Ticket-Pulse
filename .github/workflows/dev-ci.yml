@@ -1,0 +1,65 @@
+name: Dev CI Build Test
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build-auth:
+    runs-on: ubuntu-latest
+    env:
+        REDIS_ADDRESS: ${{ secrets.REDIS_ADDRESS }}
+        POSTGRES_ADDRESS: ${{ secrets.POSTGRES_ADDRESS }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        cd ./auth
+        docker build -t auth .
+
+  build-ticketing:
+    runs-on: ubuntu-latest
+    env:
+        REDIS_ADDRESS: ${{ secrets.REDIS_ADDRESS }}
+        POSTGRES_ADDRESS: ${{ secrets.POSTGRES_ADDRESS }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        cd ./ticketing
+        docker build -t ticketing .
+
+  build-frontend:
+    runs-on: ubuntu-latest
+    env:
+        REDIS_ADDRESS: ${{ secrets.REDIS_ADDRESS }}
+        POSTGRES_ADDRESS: ${{ secrets.POSTGRES_ADDRESS }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        cd ./frontend
+        docker build -t frontend .
+
+#   vulnerability-check:
+#     needs: [build-auth, build-ticketing, build-frontend]
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v2
+
+#     - name: Set up Go
+#       uses: actions/setup-go@v2
+#       with:
+#         go-version: '^1.16'
+      
+#     - name: Snyk Golang Check 
+#       uses: snyk/actions/golang@0.3.0
+#       with:
+#         args: --severity-threshold=high
+#       env:
+#         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

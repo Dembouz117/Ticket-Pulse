@@ -1,0 +1,98 @@
+name: Dev Security Scans
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  snyk-static-code-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Snyk Golang Static Code Analysis
+      uses: snyk/actions/golang@master
+      with:
+        command: code test
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      
+  snyk-golang-open-source-dependencies-security-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Auth Dependencies Scan
+      uses: snyk/actions/golang@master
+      with:
+        command: test
+        args: ./auth
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      if: ${{ success() || failure() }}
+
+    - name: Queue Dependencies Scan
+      uses: snyk/actions/golang@master
+      with:
+        command: test
+        args: ./auth
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      if: ${{ success() || failure() }}
+
+    - name: Ticketing Dependencies Scan
+      uses: snyk/actions/golang@master
+      with:
+        command: test
+        args: ./ticketing
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      if: ${{ success() || failure() }}    
+
+  snyk-nodejs-open-source-dependencies-security-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        run_install: false
+
+    - name: Install frontend dependencies
+      run: cd frontend && pnpm install && cd ..
+
+    - name: Frontend Dependencies Scan
+      uses: snyk/actions/node@master
+      with:
+        command: test
+        args: ./frontend
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      if: ${{ success() || failure() }}
+
+    - name: Install payment dependencies
+      run: cd payment && pnpm install && cd ..
+      if: ${{ success() || failure() }}
+
+    - name: Payment Dependencies Scan
+      uses: snyk/actions/node@master
+      with:
+        command: test
+        args: ./payment
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      if: ${{ success() || failure() }}

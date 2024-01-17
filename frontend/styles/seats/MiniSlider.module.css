@@ -1,0 +1,30 @@
+/* styles.css */
+.slide-in{
+    transform: translateX(0); /* Brings the cart back to its original position */
+    transition: transform 0.35s ease-in;
+      /* animation: slideIn 0.3s forwards; */
+    }
+    
+    /* @keyframes slideIn{
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    } */
+  
+  .slide-out{
+      transform: translateX(150%);
+      transition: transform 0.35s ease-out;
+      /* animation: slideOut 0.3s forwards; */
+  }
+  
+  /* @keyframes slideOut{
+      from{
+          transform: translateX(0);
+      }
+      to{
+          transform: translateX(100%);
+      }
+  } */

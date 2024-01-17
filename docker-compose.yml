@@ -1,0 +1,66 @@
+version: "3"
+
+services:
+    auth:
+        build:
+            context: ./auth
+            dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
+        networks:
+            - app-network
+        env_file:
+            - .env
+
+    ticketing:
+        build:
+            context: ./ticketing
+            dockerfile: Dockerfile
+        ports:
+            - "8081:8081"
+            - "5003:5003"
+        networks:
+            - app-network
+        env_file:
+            - .env
+
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+            args:
+                - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_51NrBPUCKyF8NumiyPxzCN3EIDlztJ7sQTLTQy41zPaeQP4x74wP2LuFugE00eGSxlsmO2RpkVjQ4nspjKrG2JXba00qymooMVn
+        ports:
+            - "3000:3000"
+        networks:
+            - app-network
+        env_file:
+            - .env
+
+    queue:
+      build:
+        context: ./queue
+        dockerfile: Dockerfile
+      ports:
+        - "8500:8500"
+      networks:
+        - app-network
+      env_file:
+        - .env
+
+    payment:
+        build:
+            context: ./payment
+            dockerfile: Dockerfile
+        ports:
+            - "8082:8082"
+        networks:
+            - app-network
+        env_file:
+            - .env
+        environment:
+            - ENVIRONMENT=compose
+
+networks:
+    app-network:
+        driver: bridge

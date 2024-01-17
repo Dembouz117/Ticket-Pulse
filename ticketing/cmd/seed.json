@@ -1,0 +1,707 @@
+[
+    {
+        "title": "Eras Tour",
+        "artist": "Taylor Swift",
+        "description": "Join Taylor Swift as she revisits her iconic albums and takes you on a musical journey through different eras of her career. Experience the magic of her songs, old and new, in a mesmerizing live performance.",
+        "headline": "Taylor Swift's Nostalgic Journey!",
+        "featured": true,
+        "imageUrl": "https://people.com/thmb/6DM8_L0YQwa2B4Sx3qky2dh2pMY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(713x199:715x201)/Taylor-swift-Mexico-City-0824232-af5045dd8be549bcb4c1c85a007c85de.jpg",
+        "sessions": [
+            {
+                "sessionDateTime": 1707739200,
+                "sections": [
+                    {
+                        "name": "Section A",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 150,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section A",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 200,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section H",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section J",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section K",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section L",
+                        "capacity": 300,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section M",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section N",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section P",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "NewJeans: Bunnie Fest",
+        "artist": "NewJeans",
+        "description": "NewJeans is back with the Bunnie Fest! Dive into a world of rhythmic beats and catchy tunes as NewJeans delivers an unforgettable concert experience. Don't miss out on this musical extravaganza!",
+        "headline": "Hop into the Musical Fest with NewJeans!",
+        "featured": false,
+        "imageUrl": "https://www.allkpop.com/upload/2022/08/content/022201/web_data/allkpop_1659492146_20220802-newjeans.jpg",
+        "sessions": [
+            {
+                "sessionDateTime": 1707825600,
+                "sections": [
+                    {
+                        "name": "Section A",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 150,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section A",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 200,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section H",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section J",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section K",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section L",
+                        "capacity": 300,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section M",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section N",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section P",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "NIKI Nicole Tour 2022",
+        "artist": "NIKI",
+        "description": "Experience the soulful melodies and powerful vocals of NIKI in her 2022 tour. With a mix of her chart-topping hits and new releases, this concert promises an evening of musical delight.",
+        "headline": "NIKI's Electrifying 2022 Tour!",
+        "featured": true,
+        "imageUrl": "https://ahboy.com/wp-content/uploads/2022/10/NIKI-Concert-Singapore-2022.jpg",
+        "sessions": [
+            {
+                "sessionDateTime": 1707912000,
+                "sections": [
+                    {
+                        "name": "Section A",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 150,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section A",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 200,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section H",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section J",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section K",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section L",
+                        "capacity": 300,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section M",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section N",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section P",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "The World Tour",
+        "artist": "Artic Monkeys",
+        "description": "The Artic Monkeys are hitting the road with their biggest tour yet! From their classic anthems to fresh tracks, get ready for a roller-coaster of rock and rhythm.",
+        "headline": "Artic Monkeys Take on the World!",
+        "featured": false,
+        "imageUrl": "https://3arena.ie/images/uploads/events/_webp/Arctic_Monkeys_Website_image_420x400px_%281%29_webp_07a18dd1189e677b3f8dd051bbde88ad.webp?width=820",
+        "sessions": [
+            {
+                "sessionDateTime": 1707998400,
+                "sections": [
+                    {
+                        "name": "Section A",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 150,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section A",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 200,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section H",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section J",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section K",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section L",
+                        "capacity": 300,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section M",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section N",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section P",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "2024 Guts World Tour",
+        "artist": "Olivia Rodrigo",
+        "description": "Join Olivia Rodrigo in her 2024 Guts World Tour as she showcases her vocal prowess and songwriting genius. From heart-wrenching ballads to upbeat numbers, this tour has it all.",
+        "headline": "Olivia Rodrigo's Global Musical Sensation!",
+        "featured": false,
+        "imageUrl": "https://3arena.ie/images/uploads/events/_webp/OR_Website_image_420x400px_%281%29_webp_07a18dd1189e677b3f8dd051bbde88ad.webp?width=820",
+        "sessions": [
+            {
+                "sessionDateTime": 1708084800,
+                "sections": [
+                    {
+                        "name": "Section A",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 150,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 100,
+                        "category": "CAT1",
+                        "price": 348
+                    },
+                    {
+                        "name": "Section A",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section B",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section C",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section D",
+                        "capacity": 200,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section E",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section F",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section G",
+                        "capacity": 150,
+                        "category": "CAT2",
+                        "price": 288
+                    },
+                    {
+                        "name": "Section H",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section J",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section K",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section L",
+                        "capacity": 300,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section M",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section N",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    },
+                    {
+                        "name": "Section P",
+                        "capacity": 220,
+                        "category": "CAT3",
+                        "price": 168
+                    }
+                ]
+            }
+        ]
+    }
+]
